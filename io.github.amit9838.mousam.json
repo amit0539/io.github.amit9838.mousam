@@ -11,30 +11,19 @@
         "--device=dri",
         "--socket=wayland"
     ],
-    "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/gtk-doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
-    ],
     "cleanup-commands": [
         "python3 -m compileall -f --invalidation-mode=unchecked-hash /app"
     ],
     "modules": [
-        "data/dependencies/python3-requests.json",
+        "python3-requests.json",
         {
             "name": "mousam",
-            "builddir": true,
             "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/amit9838/mousam.git",
+                    "tag": "v3.0.0",
                     "commit": "f3df14b0d67cbdaf7ad9f1537db73d89aff14f5e"
                 }
             ]
